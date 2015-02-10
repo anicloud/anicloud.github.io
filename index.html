@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html ng-app="pjani">
+<head lang="en" ng-controller="MetaCtrl">
+    <!--libs-->
+    <!--jquery-->
+    <script src="lib/jquery/javascript/jquery.js" type="text/javascript"></script>
+    <script src="lib/jquery/javascript/jquery.md5.js" type="text/javascript"></script>
+    <!--angularjs-->
+    <script src="lib/angularjs/javascript/angular.min.js" type="text/javascript"></script>
+    <script src="lib/angularjs/javascript/angular-route.min.js" type="text/javascript"></script>
+    <script src="lib/angularjs/javascript/angular-cookies.min.js" type="text/javascript"></script>
+    <script src="lib/angularjs/javascript/angular-touch.min.js" type="text/javascript"></script>
+    <script src="lib/angularjs/javascript/angular-translate.min.js" type="text/javascript"></script>
+    <!--ani-boot-->
+    <link rel="stylesheet" media="screen" href="lib/aniboot/stylesheet/bootstrap.css">
+    <link rel="stylesheet" media="screen" href="lib/aniboot/stylesheet/bootstrap-theme.css">
+    <script src="lib/aniboot/javascript/bootstrap.js" type="text/javascript"></script>
+    <script src="lib/aniboot/javascript/ani-landscape.js" type="text/javascript"></script>
+
+    <!--js src-->
+    <!--config-->
+    <script src="src/config/language-config.js" type="text/javascript"></script>
+    <script src="src/config/frame-config.js" type="text/javascript"></script>
+    <script src="src/config/route-config.js" type="text/javascript"></script>
+    <script src="src/config/system-service.js" type="text/javascript"></script>
+    <!--models-->
+    <script src="src/model/frame-model.js" type="text/javascript"></script>
+    <!--services-->
+    <script src="src/service/frame-service.js" type="text/javascript"></script>
+    <!--controllers-->
+    <script src="src/controller/meta-ctrl.js" type="text/javascript"></script>
+    <script src="src/controller/frame-ctrl.js" type="text/javascript"></script>
+    <script src="src/controller/home-ctrl.js" type="text/javascript"></script>
+
+    <!--main js-->
+    <script src="src/pjani.js" type="text/javascript"></script>
+    <!--main css-->
+    <link rel="stylesheet" media="screen" href="stylesheet/pjani.css">
+
+    <!--page meta-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <link rel="shortcut icon" type="image/png" href="images/logo/ani_logo.png">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="AniProjects">
+    <title ng-bind="frame.title.prefix + ' - ' + frame.title.suffix"></title>
+</head>
+<body ng-controller="FrameCtrl">
+<header class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <nav class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#/" ng-click="switchContentLabel('home')">
+                <img id="pjAniLogo" src="images/logo/ani_project_title.png" height="30px"/>
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li ng-class="getLabelState(oneLabel)" ng-repeat="oneLabel in frame.menu">
+                    <a href="#/{{oneLabel.toLowerCase()}}" ng-click="switchContentLabel(oneLabel)"
+                       ng-bind="oneLabel | translate"></a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                        <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
+                        <span ng-bind="'LANGUAGES' | translate"></span>
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li ng-repeat="(langKey, langName) in frame.languages">
+                            <a href="" ng-bind="langName" ng-click="changeLanguage(langKey)"></a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- /.container-fluid -->
+</header>
+<article class="articleContainer" ng-view></article>
+<footer class="footer">
+    <div class="container">
+        <p class="pull-right"><a href="#" target="_self">Back to top</a></p>
+        <p>Powered by Anicloud Limited &copy;2014-2015</p>
+        <p><img src="images/logo/ani_title_white_small.png" /> &reg;</p>
+    </div>
+</footer>
+</body>
+</html>
