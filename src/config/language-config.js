@@ -47,7 +47,7 @@ ani.pj.config.language.translations = {
         DEVELOPER_FRIENDLY: "开发者友好",
         DEVELOPER_FRIENDLY_CONTENT: "Anicloud® 面向在线应用和主流嵌入式硬件方案提供了易于使用的SDK，您只需实现或注入需要使用或提供的功能接口，设备或在线服务即可直接暴露/使用之",
         DECENTRALIZED_AUTHENTICATION: "去中心化认证",
-        DECENTRALIZED_AUTHENTICATION_CONTENT: "作为开发者，您不需要在設備首次连接平台之前提前注册之，在线服务亦不需要关注注册和認證流程，放心将这些事情交给SDK吧！",
+        DECENTRALIZED_AUTHENTICATION_CONTENT: "作为开发者，您不需要在設備首次连接平台之前提前注册之，在线服务亦不需要关注注册和认证流程，放心将这些事情交给SDK吧！",
         ANICEL_DESC: "核心云端设备总线模块，提供了基础的设备与在线应用程序连接功能，具有设备认证、用户管理、应用程序授信以及设备状态管理职能",
         WILDDRAGON_DESC: "Anicel的客户端模块，提供了可穿戴设备连接能力，并且集成了已安装应用程序索引、商店及搜索引擎的入口",
         HONEY_DESC: "在线应用程序以及硬件设备分发模块"
