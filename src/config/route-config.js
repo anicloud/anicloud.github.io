@@ -10,9 +10,9 @@ ani.pj.config.route = {
         'src/view/home.html',
         'HomeCtrl'
     ],
-    '/projects': [
-        'src/view/projects.html',
-        'ProjectsCtrl'
+    '/modules': [
+        'src/view/modules.html',
+        'ModulesCtrl'
     ],
     '/error': [
         'src/view/error.html',

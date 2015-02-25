@@ -14,7 +14,7 @@ ani.pj.config.language.list = {
 ani.pj.config.language.translations = {
     en: {
         // menu
-        MODULES: "Projects",
+        MODULES: "Modules",
         DOCS: "Docs",
         TEAM: "Team",
         CONTACT: "Contact us",

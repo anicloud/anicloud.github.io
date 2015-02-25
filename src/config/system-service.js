@@ -14,7 +14,9 @@ ani.pj.config.service = {
                 ani.pj.config.language.translations[oneTranslation]
             );
         }
-        $translateProvider.preferredLanguage('en');
+        $translateProvider
+            .determinePreferredLanguage()
+            .preferredLanguage('en');
     },
     $routeProvider: function ($routeProvider) {
         for (var oneRoute in ani.pj.config.route) {
