@@ -12,7 +12,7 @@ ani.pj.config.language.list = {
     zh_TW: "正體中文"
 }
 ani.pj.config.language.translations = {
-    en: {
+    'en': {
         // menu
         MODULES: "Modules",
         DOCS: "Docs",
@@ -32,7 +32,7 @@ ani.pj.config.language.translations = {
         WILDDRAGON_DESC: "User-end client module of Anicel, which provides connectivity for wearable devices, integrates installed application index, portals of store and search engine",
         HONEY_DESC: "Distribution module of online services and devices."
     },
-    zh_CN: {
+    'zh_CN': {
         // menu
         MODULES: "模块",
         DOCS: "文档",
@@ -52,7 +52,7 @@ ani.pj.config.language.translations = {
         WILDDRAGON_DESC: "Anicel的客户端模块，提供了可穿戴设备连接能力，并且集成了已安装应用程序索引、商店及搜索引擎的入口",
         HONEY_DESC: "在线应用程序以及硬件设备分发模块"
     },
-    zh_TW: {
+    'zh_TW': {
         // menu
         MODULES: "模組",
         DOCS: "文檔",
