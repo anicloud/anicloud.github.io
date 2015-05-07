@@ -30,7 +30,13 @@ ani.pj.config.language.translations = {
         DECENTRALIZED_AUTHENTICATION_CONTENT: "As a developer, you needn't register your devices to the cloud before the first connection, services also needn't care about registration and authentication process, just leave it to SDK!",
         ANICEL_DESC: "Core cloud-side device bus module which provides the common connectivity for devices and online applications includes device authentication, user management, application authorization and device state management service.",
         WILDDRAGON_DESC: "User-end client module of Anicel, which provides connectivity for wearable devices, integrates installed application index, portals of store and search engine",
-        HONEY_DESC: "Distribution module of online services and devices."
+        HONEY_DESC: "Distribution module of online services and devices.",
+        //contact
+        CONTACTS: "Contact us",
+        ADDRESS: "Room 5061, Building 10, No.6 Fengtai East Road, Beijing"+'\n'+"China 100071",
+        //form
+        Name: "Name",
+        question: "Ask a question"
     },
     'zh_CN': {
         // menu
@@ -50,7 +56,15 @@ ani.pj.config.language.translations = {
         DECENTRALIZED_AUTHENTICATION_CONTENT: "作为开发者，您不需要在設備首次连接平台之前提前注册之，在线服务亦不需要关注注册和认证流程，放心将这些事情交给SDK吧！",
         ANICEL_DESC: "核心云端设备总线模块，提供了基础的设备与在线应用程序连接功能，具有设备认证、用户管理、应用程序授信以及设备状态管理职能",
         WILDDRAGON_DESC: "Anicel的客户端模块，提供了可穿戴设备连接能力，并且集成了已安装应用程序索引、商店及搜索引擎的入口",
-        HONEY_DESC: "在线应用程序以及硬件设备分发模块"
+        HONEY_DESC: "在线应用程序以及硬件设备分发模块",
+        //contact
+        CONTACTS: "联系我们",
+        ADDRESS: "北京市丰台东大街6号院10号楼5061"+'\n'+"中国 100071",
+        //form
+        Name: "姓名",
+        question: "提问"
+
+
     },
     'zh_TW': {
         // menu
@@ -70,6 +84,13 @@ ani.pj.config.language.translations = {
         DECENTRALIZED_AUTHENTICATION_CONTENT: "作爲開發者，您不需要在設備首次連接平臺之前提前註冊之，在線服務亦不需要關注註冊和認證流程，放心將這些事情交給SDK吧！",
         ANICEL_DESC: "核心雲端設備總線模塊，提供了基礎的設備與線上應用程序連接功能，具有設備認證、用戶管理、應用程序授信以及設備狀態管理職能",
         WILDDRAGON_DESC: "Anicel的客戶端模塊，提供了可穿戴設備連接能力，並且集成了已安裝應用程序索引、商店及搜索引擎的入口",
-        HONEY_DESC: "線上應用程序以及硬件設備分發模塊"
+        HONEY_DESC: "線上應用程序以及硬件設備分發模塊",
+        //contact
+        CONTACTS: "聯繫我們",
+        ADDRESS: "北京市豐台東大街六號院10號樓5061"+'\n'+"中国 100071",
+        //form
+        Name: "姓名",
+        question: "提問"
+
     }
 }

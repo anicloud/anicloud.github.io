@@ -14,6 +14,10 @@ ani.pj.config.route = {
         'src/view/modules.html',
         'ModulesCtrl'
     ],
+    '/contact': [
+        'src/view/contact.html',
+        'ContactCtrl'
+    ],
     '/error': [
         'src/view/error.html',
         'ErrorCtrl'

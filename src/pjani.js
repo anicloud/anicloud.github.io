@@ -33,3 +33,7 @@ ani.pj.global.loadApp = function(controllerObj, serviceObj, appName){
 }
 
 ani.pj.global.loadApp(ani.pj.controller, ani.pj.service, 'pjani');
+
+
+
+
