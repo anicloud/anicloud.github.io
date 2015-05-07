@@ -33,7 +33,7 @@ ani.pj.config.language.translations = {
         HONEY_DESC: "Distribution module of online services and devices.",
         //contact
         CONTACTS: "Contact us",
-        ADDRESS: "Room 5061, Building 10, No.6 Fengtai East Road, Beijing"+'\n'+"China 100071",
+        ADDRESS: "Room 5061, No.10 Yard 6, E.Fengtai Ave. Beijing 100071, P.R.China",
         //form
         Name: "Name",
         question: "Ask a question"

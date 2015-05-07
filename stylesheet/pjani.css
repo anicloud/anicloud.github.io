@@ -56,6 +56,7 @@ ul li {
     background-color: #FFFFFF;
     padding: 10px 40px 30px 40px;
     margin-top: -20px;
+    /*-webkit-box-shadow: 0 0 10px #eaeaea;*/
 }
 
 .contact h2 {
