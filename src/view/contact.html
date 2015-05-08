@@ -3,7 +3,7 @@
 
         <div class="map">
             <!--百度地图容器-->
-            <div style="/*width:66.6%;*/height:405px; border:#ccc solid 1px; font-size:14px" id="map"></div>
+            <div style="/*width:66.6%;*/height:425px; border:#ccc solid 1px; font-size:14px" id="map"></div>
         </div>
     </div>
 
@@ -55,6 +55,7 @@
             setMapEvent();//设置地图事件
             addMapControl();//向地图添加控件
             addMapOverlay();//向地图添加覆盖物
+            setMapStyle();
         }
         function createMap(){
             map = new BMap.Map("map");
@@ -73,7 +74,7 @@
         }
         function addMapOverlay(){
             var markers = [
-                {content:"",title:"Anicloud",imageOffset: {width:0,height:-21},position:{lat:39.86985,lng:116.304396}}
+                {content:"",title:"<h4>Anicloud</h4>",imageOffset: {width:0,height:-21},position:{lat:39.86985,lng:116.304396}}
             ];
             for(var index = 0; index < markers.length; index++ ){
                 var point = new BMap.Point(markers[index].position.lng,markers[index].position.lat);
@@ -81,20 +82,116 @@
                     imageOffset: new BMap.Size(markers[index].imageOffset.width,markers[index].imageOffset.height)
                 })});
 //                var label = new BMap.Label(markers[index].title,{offset: new BMap.Size(25,5)})
+                //取消标签
                 var label = new BMap.Label(null)
-                label.setStyle({border: "0", background: "none"
-                        })
+                label.setStyle({border: "0", background: "none"})
+
                 var opts = {
                     width: 200,
                     title: markers[index].title,
                     enableMessage: false
                 };
-                var infoWindow = new BMap.InfoWindow(markers[index].content,opts);
+
+                var infoWindow = new BMap.InfoWindow(markers[index].content, opts);
                 marker.setLabel(label);
                 addClickHandler(marker,infoWindow);
                 map.addOverlay(marker);
             };
         }
+
+        function setMapStyle() {
+
+            map.setMapStyle({
+                styleJson:[ {
+                    "featureType": "land",
+                    "elementType": "geometry",
+                    "stylers": {
+                        "color": "#f3f3f3"
+                    }
+                },
+                    {
+                        "featureType": "water",
+                        "elementType": "all",
+                        "stylers": {
+                            "color": "#ffffff"
+                        }
+                    },
+                    {
+                        "featureType": "green",
+                        "elementType": "all",
+                        "stylers": {
+                            "color": "#d9ead3"
+                        }
+                    },
+                    {
+                        "featureType": "highway",
+                        "elementType": "geometry.fill",
+                        "stylers": {
+                            "color": "#93c47d"
+                        }
+                    },
+                    {
+                        "featureType": "highway",
+                        "elementType": "geometry.stroke",
+                        "stylers": {
+                            "color": "#93c47d"
+                        }
+                    },
+                    {
+                        "featureType": "arterial",
+                        "elementType": "geometry.fill",
+                        "stylers": {
+                            "color": "#d9ead3"
+                        }
+                    },
+                    {
+                        "featureType": "arterial",
+                        "elementType": "geometry.stroke",
+                        "stylers": {
+                            "color": "#93c47d"
+                        }
+                    },
+                    {
+                        "featureType": "local",
+                        "elementType": "labels.text.fill",
+                        "stylers": {
+                            "color": "#93c47d"
+                        }
+                    },
+                    {
+                        "featureType": "local",
+                        "elementType": "labels.text.stroke",
+                        "stylers": {
+                            "color": "#b6d7a8"
+                        }
+                    },
+                    {
+                        "featureType": "arterial",
+                        "elementType": "labels.text.fill",
+                        "stylers": {
+                            "color": "#274e13"
+                        }
+                    },
+                    {
+                        "featureType": "highway",
+                        "elementType": "labels.text.fill",
+                        "stylers": {
+                            "color": "#274e13"
+                        }
+                    },
+                    {
+                        "featureType": "highway",
+                        "elementType": "labels.text.stroke",
+                        "stylers": {
+                            "color": "#d9ead3"
+                        }
+                    }]
+            });
+        }
+
+
+
+
         //向地图添加控件
         function addMapControl(){
             var scaleControl = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});

@@ -36,7 +36,9 @@ ani.pj.config.language.translations = {
         ADDRESS: "Room 5061, No.10 Yard 6, E.Fengtai Ave. Beijing 100071, P.R.China",
         //form
         Name: "Name",
-        question: "Ask a question"
+        question: "Ask a question",
+
+        INFOADDRESS: "Room 5061, No.10 Yard 6, E.Fengtai Ave. Beijing 100071, P.R.China"
     },
     'zh_CN': {
         // menu
@@ -62,7 +64,8 @@ ani.pj.config.language.translations = {
         ADDRESS: "北京市丰台东大街6号院10号楼5061"+'\n'+"中国 100071",
         //form
         Name: "姓名",
-        question: "提问"
+        question: "提问",
+        INFOADDRESS: "北京市丰台东大街6号院10号楼5061"+'\n'+"中国 100071"
 
 
     },
@@ -90,7 +93,9 @@ ani.pj.config.language.translations = {
         ADDRESS: "北京市豐台東大街六號院10號樓5061"+'\n'+"中国 100071",
         //form
         Name: "姓名",
-        question: "提問"
+        question: "提問",
+
+        INFOADDRESS: "北京市豐台東大街六號院10號樓5061"+'\n'+"中国 100071"
 
     }
 }
