@@ -7,6 +7,9 @@ ani.pj.controller = ani.pj.controller || {};
 
 ani.pj.controller.FrameCtrl = function($scope, $rootScope, $translate){
     $rootScope.frame = new ani.pj.model.Frame();
+    $rootScope.getWindowHeight = function(){
+        return $(window).height();
+    }
     $scope.curLabel = "home";
     $scope.switchContentLabel = function(label){
         $scope.curLabel = label.toLowerCase();
