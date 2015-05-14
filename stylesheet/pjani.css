@@ -67,6 +67,28 @@ ul li {
     border-bottom: solid 1.5px;
     padding-bottom: 12px;
 }
-/*.row {*/
-    /*margin-bottom: 1em;*/
-/*}*/
+.header {
+    width: 100%;
+    height: 400px;
+    background-image: url("../images/logo/DSC01239副本副本.jpg");
+    text-align: center;
+    margin-top: 0px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+h1.header {
+
+    text-align: center;
+    padding-top: -300px;
+
+}
+
+/*content navbar*/
+#contentNav ul li {
+    color: #880000;
+}
+.articleContainer nav ul li a{
+
+}

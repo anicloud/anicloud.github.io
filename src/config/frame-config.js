@@ -15,9 +15,9 @@ ani.pj.config.frame = {
         background: ""
     },
     menu: [
-        "MODULES",
+        //"MODULES",
         "DOCS",
-        "TEAM",
+        //"TEAM",
         "CONTACT"
     ]
 }
