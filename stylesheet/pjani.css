@@ -70,7 +70,6 @@ ul li {
 .header {
     width: 100%;
     height: 400px;
-    background-image: url("../images/logo/DSC01239副本副本.jpg");
     text-align: center;
     margin-top: 0px;
     position: absolute;
@@ -87,11 +86,11 @@ h1.header {
 
 /*content navbar*/
 
-ul li {
+#contentNav ul li {
     text-align: right;
 }
 
-ul li a{
+#contentNav ul li a{
     color: #92d13d;
     padding-right: 20px;
 }
@@ -102,11 +101,11 @@ ul li a{
 }
 
 
-ul li ul a{
+#contentNav ul li ul a{
     color: #999;
 }
 
-ul li ul a:hover {
+#contentNav ul li ul a:hover {
     border-right: 1px solid #92d13d;
 }
 
@@ -116,5 +115,24 @@ ul li ul a:hover {
 
 
 
+/*docs*/
+
+#docArticle img {
+    width: 100%;
+}
+
+#docArticle {
+    font-family: 'Helvetica Neue', 'Hiragino Sans GB', 'Microsoft YaHei',  sans-serif;
+}
+
+#docArticle ul li {
+    list-style-type: disc;
+    color: #999;
+    /*font-weight: bold;*/
+}
+
+#docArticle h3 {
+    color: #92d13d;
+}
 
 
