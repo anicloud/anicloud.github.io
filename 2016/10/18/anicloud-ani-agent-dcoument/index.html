@@ -1,0 +1,878 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="agent," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="概述Ani-Agent模块是为第三方开发者提供的SDK。该模块封装了Service-Bus对外提供的开放接口的常用服务。利用该模块，开发者可以方便的进行第三方服务的注册、用户用户组管理、基于OAuth2.0授信、设备对象信息获取以及对象Stub调用等功能。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ani.Cloud Ani-Agent Document">
+<meta property="og:url" content="http://anicloud.github.io/2016/10/18/anicloud-ani-agent-dcoument/index.html">
+<meta property="og:site_name" content="Ani.Cloud">
+<meta property="og:description" content="概述Ani-Agent模块是为第三方开发者提供的SDK。该模块封装了Service-Bus对外提供的开放接口的常用服务。利用该模块，开发者可以方便的进行第三方服务的注册、用户用户组管理、基于OAuth2.0授信、设备对象信息获取以及对象Stub调用等功能。">
+<meta property="og:updated_time" content="2016-10-18T13:35:58.752Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ani.Cloud Ani-Agent Document">
+<meta name="twitter:description" content="概述Ani-Agent模块是为第三方开发者提供的SDK。该模块封装了Service-Bus对外提供的开放接口的常用服务。利用该模块，开发者可以方便的进行第三方服务的注册、用户用户组管理、基于OAuth2.0授信、设备对象信息获取以及对象Stub调用等功能。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://anicloud.github.io/2016/10/18/anicloud-ani-agent-dcoument/"/>
+
+
+  <title> Ani.Cloud Ani-Agent Document | Ani.Cloud </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Ani.Cloud</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Link Everything</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Ani.Cloud Ani-Agent Document
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-18T21:33:42+08:00" content="2016-10-18">
+              2016-10-18
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Ani-Cloud/" itemprop="url" rel="index">
+                    <span itemprop="name">Ani.Cloud</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p><strong>Ani-Agent</strong>模块是为第三方开发者提供的SDK。该模块封装了<strong>Service-Bus</strong>对外提供的开放接口的常用服务。利用该模块，开发者可以方便的进行第三方服务的注册、用户用户组管理、基于OAuth2.0授信、设备对象信息获取以及对象Stub调用等功能。<br><a id="more"></a></p>
+<h2 id="模块列表"><a href="#模块列表" class="headerlink" title="模块列表"></a>模块列表</h2><h3 id="用户用户组"><a href="#用户用户组" class="headerlink" title="用户用户组"></a>用户用户组</h3><blockquote>
+<p>该模块提供对用户用户组的基本操作。包括用户的注册、修改；以及用户组的添加、删除、关联等操作。</p>
+</blockquote>
+<h3 id="第三方服务注册"><a href="#第三方服务注册" class="headerlink" title="第三方服务注册"></a>第三方服务注册</h3><blockquote>
+<p>该模块提供第三方服务的注册功能。开发者能够提供该模块在Anicloud 平台注册自己的应用（服务）。平台会为该应用颁发唯一的ID以及client_secret。</p>
+</blockquote>
+<h3 id="设备对象（DeviceObj）信息获取"><a href="#设备对象（DeviceObj）信息获取" class="headerlink" title="设备对象（DeviceObj）信息获取"></a>设备对象（DeviceObj）信息获取</h3><blockquote>
+<p>该模块提供对DeviceObj的信息查询功能。通过用户授信的第三方应用可以利用该接口获取用户的设备状态信息、设备Stub 列表信息等。</p>
+</blockquote>
+<h3 id="基于OAuth2-0-的授信"><a href="#基于OAuth2-0-的授信" class="headerlink" title="基于OAuth2.0 的授信"></a>基于OAuth2.0 的授信</h3><blockquote>
+<p>该模块提供对OAuth2.0 协议的流程封装，提供该模块可以方便地进行access_token的获取以及token的刷新操作。该模块提供了对<strong>Authorization Code</strong>、<strong>Password</strong>、<strong>Implicit</strong>三种授信模式的支持。</p>
+</blockquote>
+<h3 id="对象Stub调用"><a href="#对象Stub调用" class="headerlink" title="对象Stub调用"></a>对象Stub调用</h3><blockquote>
+<p>该模块提供了对象Stub调用的接口<strong>AniInvokable</strong>。对Stub的调用提供了同步和异步两种方式。异步的调用需要开发者实现消息结果解析的观察者接口<strong>MessageObserver</strong>，利用该接口来处理异步调用的结果。同时也提供了平台对应用的反向调用接口<strong>ClientInvokable</strong>，该接口需要由应用的开发者实现。</p>
+</blockquote>
+<h2 id="设计实现"><a href="#设计实现" class="headerlink" title="设计实现"></a>设计实现</h2><h3 id="技术选择"><a href="#技术选择" class="headerlink" title="技术选择"></a>技术选择</h3><ul>
+<li>协议WebSocket、Http、OAuth2.0</li>
+<li>设计模式：观察者、工厂、单例</li>
+<li>Spring RestTemplate 提供对Http 接口的访问</li>
+</ul>
+<h3 id="系统配置"><a href="#系统配置" class="headerlink" title="系统配置"></a>系统配置</h3><p>anicel_meta.properties 文件是<strong>Servuce-Agent</strong>的核心配置文件。主要包括<strong>ServiceBus</strong>的各类资源地址。当<strong>ServiceBus</strong>的地址发生改变时，可以对该文件进行编辑。</p>
+<h3 id="核心类"><a href="#核心类" class="headerlink" title="核心类"></a>核心类</h3><ul>
+<li><strong>AnicelMeta</strong> 提供对anicel_meta.properties 文件的读取操作，并作为<strong>Service-Agent</strong>的核心配置类存在。Http和Websocket的实现都依赖于该类。</li>
+<li><strong>DomainObjectValidator</strong> 提供对Bean Valication的实现。采用的是Hibernate Validation 实现。</li>
+<li><strong>AccountObject</strong> 该类提供对用户状态的维护功能，同时第三方应用通过该类，为用户对象绑定Stub列表。以便实现对用户Stub的调用。</li>
+</ul>
+<h3 id="核心业务类"><a href="#核心业务类" class="headerlink" title="核心业务类"></a>核心业务类</h3><ul>
+<li><p><strong>AccountService</strong> 该接口提供对用户的基本操作。需要注意的是注册用户时，不需要提供token。</p>
+<ul>
+<li>register(AccountRegisterDto account) </li>
+<li>modify(AccountModifyDto account)</li>
+<li>getByAccountId(Long accountId)</li>
+<li>getByEmail(String email)</li>
+<li>getByPhoneNumber(String phoneNumber)</li>
+<li>getByAccessToken()</li>
+<li>addAccountInGroup(Long accountId, Long groupId) 添加用户到用户组</li>
+</ul>
+</li>
+<li><p><strong>AccountGroupService</strong> 该接口提供对用组的基本操作。</p>
+<ul>
+<li>save(GroupFormDto accountGroup)</li>
+<li>modify(GroupFormDto accountGroup)</li>
+<li>remove(Long accountId, Long groupId)</li>
+<li>getByAccountAndGroupType(Long accountId, GroupType groupType)</li>
+<li>getAccountsInGroup(Long groupId)</li>
+</ul>
+</li>
+<li><p><strong>AniServiceManager</strong> 该接口提供第三方开发者注册应用的操作。注册应用时不需要提供token。</p>
+<ul>
+<li>register(AniServiceRegisterDto registerDto)</li>
+<li>getByAniService(String aniServiceId, String clientSecret)</li>
+</ul>
+</li>
+<li><p><strong>DeviceObjService</strong> 该接口提供对设备对象的获取操作。</p>
+<ul>
+<li>getDeviceObjInfo(Long accountId, boolean withSlave)</li>
+<li>getDeviceObjInfo(Long accountId, Long mainObjId, boolean withSlave)</li>
+</ul>
+</li>
+<li><p><strong>AniOAuthService</strong> 该接口实现了OAuth2.0 的相关流程。</p>
+<ul>
+<li>getOAuth2AccessToken(String code, AuthorizationCodeParameter authorizationCodeParameter)</li>
+<li>getOAuth2AccessToken(PasswordParameter passwordParameter)</li>
+<li>getOAuth2AccessToken(ImplicitParameter implicitParameter) 暂未实现</li>
+<li>refreshAccessToken(String refreshToken, AuthorizationCodeParameter authorizationCodeParameter)</li>
+</ul>
+</li>
+<li><p><strong>AccountInvoker</strong> 该接口是第三方应用维护用户对象状态（AccoutObject）的接口。Anicloud 平台需要维护Account-App-ServiceBus的状态信息。需要第三方应用在适当的地方调用该接口的实现类，向平台汇报用户状态。</p>
+<ul>
+<li>registerAndLogin(AccountObject accountObject)</li>
+<li>login(AccountObject accountObject)</li>
+<li>logout(AccountObject accountObject) </li>
+<li>remove(AccountObject accountObject)</li>
+<li>updateAccountObjectStubList(AccountObject accountObject)</li>
+</ul>
+</li>
+<li><p><strong>AniInvokable</strong> 该接口提供对对象Stub的同步和异步调用。当调用为异步调用时，需要注册实现<strong>MessageObserver</strong>接口的消息处理观察者到WebsocketClient 对象中。</p>
+<ul>
+<li>invokeAniObjectAsyn(AniStub stub) </li>
+<li>invokeAniObjectSync(AniStub stub) </li>
+</ul>
+</li>
+<li><p><strong>ClientInvokable</strong> 该接口是为实现平台对应用的调用而设计的。需要第三方开发者显示地实现该接口，并注入到WeboSocketClient 中。</p>
+<ul>
+<li>invokeAniObjectSync(AniStub stub)</li>
+<li>sessionOnClose(String sessionId, CloseReason closeReason) session监听接口</li>
+<li>sessionOnError(String sessionId, Throwable throwable) session监听接口</li>
+</ul>
+</li>
+<li><p><strong>AgentTemplate</strong> 该接口是对<strong>Service-Agent</strong>提供的基于Http协议的业务类的单例封装模板类。利用该模板类可以方便地在应用全局以单例的方式实现对AccountService、AccountGroupService、ServiceManager、DeviceObjService和AniOAuthService的构造。</p>
+</li>
+</ul>
+<h3 id="外部接口"><a href="#外部接口" class="headerlink" title="外部接口"></a>外部接口</h3><ul>
+<li><strong>MessageObserver</strong> 该接口是当对对象Stub异步调用结果的获取及处理时需要实现并注入到WebSocketClient中的。需要由第三方开发者实现。<ul>
+<li>void update(MessageObservable o, Object arg)</li>
+</ul>
+</li>
+</ul>
+<h3 id="开发者文档"><a href="#开发者文档" class="headerlink" title="开发者文档"></a>开发者文档</h3><p><strong>Service-Agent</strong>的使用都在核心类的上部利用<strong>javadoc</strong>进行了标注。具体的使用请参<a href="http://bj-yatsen.anicel.cn:8080/service-agent/apidocs/" target="_blank" rel="external">ServiceAgent文档地址</a>。</p>
+<h2 id="部署要求"><a href="#部署要求" class="headerlink" title="部署要求"></a>部署要求</h2><ul>
+<li>JDK 1.7 以上</li>
+<li>Hibernate Valication 包</li>
+<li>Spring RestTeplate 包</li>
+<li>anicel-commons 包</li>
+</ul>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/" target="_blank" rel="external">Spring Document</a></li>
+<li><a href="http://hibernate.org/validator/" target="_blank" rel="external">Hibernate Validation</a></li>
+<li><a href="https://github.com/jeansfish/RFC6749.zh-cn/blob/master/TableofContents.md" target="_blank" rel="external">OAuth2.0 规范</a></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/agent/" rel="tag">#agent</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/18/anicloud-service-bus-document/" rel="next" title="Ani.Cloud Service-Bus Document">
+                <i class="fa fa-chevron-left"></i> Ani.Cloud Service-Bus Document
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/anicloud.png"
+               alt="anicloud@anicloud.com" />
+          <p class="site-author-name" itemprop="name">anicloud@anicloud.com</p>
+          <p class="site-description motion-element" itemprop="description">连接一切，从这里开始</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模块列表"><span class="nav-number">2.</span> <span class="nav-text">模块列表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#用户用户组"><span class="nav-number">2.1.</span> <span class="nav-text">用户用户组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三方服务注册"><span class="nav-number">2.2.</span> <span class="nav-text">第三方服务注册</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设备对象（DeviceObj）信息获取"><span class="nav-number">2.3.</span> <span class="nav-text">设备对象（DeviceObj）信息获取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于OAuth2-0-的授信"><span class="nav-number">2.4.</span> <span class="nav-text">基于OAuth2.0 的授信</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对象Stub调用"><span class="nav-number">2.5.</span> <span class="nav-text">对象Stub调用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设计实现"><span class="nav-number">3.</span> <span class="nav-text">设计实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#技术选择"><span class="nav-number">3.1.</span> <span class="nav-text">技术选择</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#系统配置"><span class="nav-number">3.2.</span> <span class="nav-text">系统配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#核心类"><span class="nav-number">3.3.</span> <span class="nav-text">核心类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#核心业务类"><span class="nav-number">3.4.</span> <span class="nav-text">核心业务类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外部接口"><span class="nav-number">3.5.</span> <span class="nav-text">外部接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开发者文档"><span class="nav-number">3.6.</span> <span class="nav-text">开发者文档</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部署要求"><span class="nav-number">4.</span> <span class="nav-text">部署要求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2014 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">anicloud@anicloud.com</span>
+</div>
+
+<div class="powered-by">
+  Copyright By <a class="theme-link" href="https://hexo.io">Ani.Cloud</a> 
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = false;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title >= 0 || index_content >= 0 ){
+                                isMatch = true;
+								if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            } 
+							
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+
+
+</body>
+</html>
