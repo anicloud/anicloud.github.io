@@ -96,7 +96,7 @@
 <meta property="og:image" content="http://anicloud.github.io/images/anicloud/deviceobj-controller.png">
 <meta property="og:image" content="http://anicloud.github.io/images/anicloud/websocket.png">
 <meta property="og:image" content="http://anicloud.github.io/images/anicloud/tomcat_config.png">
-<meta property="og:updated_time" content="2016-10-18T13:31:00.460Z">
+<meta property="og:updated_time" content="2016-10-19T02:06:04.080Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ani.Cloud Service-Bus Document">
 <meta name="twitter:description" content="概述ServiceBus 为Octopus 核心提供对外的应用（服务）接入，以及基于OAuth2.0 的用户资源授信功能。是Anicloud 平台实现Device-to-Device，Service-to-Service 和Service-to-Device 的枢纽。 ServiceBus 对外提供平台用户资源、设备访问控制、对象状态管理、消息推送等核心功能。ServiceBus 的开放接口主要基">
@@ -363,7 +363,7 @@
 <li><strong>domain</strong> 领域对方层，系统的核心功能</li>
 <li><strong>infrastructure</strong> 基础设施层，提供数据持久化，消息等功能</li>
 </ul>
-<h3 id="领域对象设计"><a href="#领域对象设计" class="headerlink" title="领域对象设计"></a>领域对象设计</h3><p>  <img src="images/anicloud/service-bus-domain.png" alt="domain"></p>
+<h3 id="领域对象设计"><a href="#领域对象设计" class="headerlink" title="领域对象设计"></a>领域对象设计</h3><p>  <img src="/images/anicloud/service-bus-domain.png" alt="domain"></p>
 <ul>
 <li><p><strong>AniSerAccountObj</strong> </p>
 <blockquote>
@@ -396,15 +396,15 @@
 <ul>
 <li>AccountController，AccountGroupController</li>
 </ul>
-<p><img src="images/anicloud/account-group-controller.png" alt="Account-Controller"></p>
+<p><img src="/images/anicloud/account-group-controller.png" alt="Account-Controller"></p>
 <ul>
 <li>AniServiceController</li>
 </ul>
-<p><img src="images/anicloud/aniservice-controller.png" alt="AniServiceController"></p>
+<p><img src="/images/anicloud/aniservice-controller.png" alt="AniServiceController"></p>
 <ul>
 <li>DeviceObjController</li>
 </ul>
-<p><img src="images/anicloud/deviceobj-controller.png" alt="DeviceObjController"></p>
+<p><img src="/images/anicloud/deviceobj-controller.png" alt="DeviceObjController"></p>
 </li>
 </ul>
 <ul>
@@ -412,7 +412,7 @@
 <ul>
 <li>WebSocketServer 系统采用WebSocket 实现与第三方服务的全双工通信。WebSocket 通道主要实现对Object 的Stub 的同步/异步访问，Object的状态维护，消息的推送等功能。</li>
 </ul>
-<p><img src="images/anicloud/websocket.png" alt="websocket"></p>
+<p><img src="/images/anicloud/websocket.png" alt="websocket"></p>
 </li>
 </ul>
 <h3 id="核心业务类"><a href="#核心业务类" class="headerlink" title="核心业务类"></a>核心业务类</h3><ul>
@@ -469,7 +469,7 @@
 <h2 id="开发者文档"><a href="#开发者文档" class="headerlink" title="开发者文档"></a>开发者文档</h2><p>ServiceBus 提供了客户端<strong>SDK</strong> 开发者工具包，帮助第三方开发者快速地利用Anicloud 平台进行开发。详细参见 <a href="https://github.com/anicloud/octopus-object-client/wiki/Service-Bus-Agent-Docucment" target="_blank" rel="external">Service-Agent</a> 开发者文档。</p>
 <h2 id="部署要求"><a href="#部署要求" class="headerlink" title="部署要求"></a>部署要求</h2><ul>
 <li><p>由于Spring 采用AOP 的方式实现DDD，为了让程序的war 包能够顺利发布到Tomcat 容器中，需要设置对应的环境变量。在tomcat 的bin 目录下的setenv.sh 文件中添加如下配置。如下图所示。</p>
-<p><img src="images/anicloud/tomcat_config.png" alt="tomcat"></p>
+<p><img src="/images/anicloud/tomcat_config.png" alt="tomcat"></p>
 </li>
 <li><p>tomcat 默认只支持50MB大小的文件上传，如果war 包过大需要修改tomcat 的配置文件。具体可网络搜索。</p>
 </li>
